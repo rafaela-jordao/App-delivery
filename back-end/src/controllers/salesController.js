@@ -2,7 +2,6 @@ const salesService = require('../services/salesService');
 
 const salesController = {
   create: async (req, res) => {
-    console.log(req.user);
     const { id: userId } = req.user;
     const { products, ...saleData } = req.body;
     const { id: saleId } = await salesService

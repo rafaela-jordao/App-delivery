@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { readInLocalStorage, saveInLocalStorage } from '../services/localStorage';
 import requestApi from '../services/ApiService';
+import './login.css';
 
 const MIN_PASS_LENGTH = 6;
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
@@ -67,11 +68,12 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className="body">
       <img src="/APP DE Delivery.png" alt="logo Bear Delivery" />
       <h1>LOGIN</h1>
       <form>
         <input
+          className=""
           onChange={ ({ target }) => setEmail(target.value) }
           placeholder="E-mail"
           type="email"
