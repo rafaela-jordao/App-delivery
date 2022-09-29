@@ -8,6 +8,7 @@ import Products from './pages/products';
 import Checkout from './pages/checkout';
 import Orders from './pages/orders';
 import SaleDetail from './pages/saleDetail';
+import Admin from './pages/admin';
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
           path="/seller/orders/:id"
           element={ <SaleDetail user="seller" /> }
         />
+        {/* Fluxo do administrador */}
+        <Route exact path="/admin/manage" element={ <Admin /> } />
       </Routes>
     </div>
   );

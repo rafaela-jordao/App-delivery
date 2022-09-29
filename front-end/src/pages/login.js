@@ -17,7 +17,17 @@ function Login() {
   useEffect(() => {
     const verifyUser = () => {
       const user = readInLocalStorage('user');
-      if (user) return navigate('/customer/products');
+      if (user) {
+        let nav = '';
+        if (user.role === 'customer') {
+          nav = '/customer/products';
+        } else if (user.role === 'seller') {
+          nav = '/seller/orders';
+        } else {
+          nav = '/admin/manage';
+        }
+        return navigate(nav);
+      }
     };
     verifyUser();
   // eslint-disable-next-line react-hooks/exhaustive-deps

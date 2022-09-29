@@ -44,9 +44,9 @@ function ClientNav({ page }) {
   case 'administrator':
     navLinks = (
       <NavLink
-        to="/aaa/orders"
+        to="/admin/orders" // ?????
         testid="customer_products__element-navbar-link-orders"
-        text="Gerenciar Usuário"
+        text="Gerenciar Usuários"
       />
     );
     break;
