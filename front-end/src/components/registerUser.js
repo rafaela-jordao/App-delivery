@@ -13,7 +13,7 @@ function RegisterUser() {
   const [disabled, setDisabled] = useState(true);
   const [messageError, setMessageError] = useState(false);
 
-  useEffect(() => { // Req 37
+  useEffect(() => {
     const validName = name.length >= MIN_NAME_LENGTH;
     const validEmail = EMAIL_REGEX.test(email);
     const validPassword = password.length >= MIN_PASS_LENGTH;
@@ -25,14 +25,14 @@ function RegisterUser() {
     e.preventDefault();
 
     try {
-      await requestApi( // CONFIRMAR ROTA NO BACK > req 38
-        '/admin/register',
+      await requestApi(
+        '/users',
         'POST',
         { name, email, password, role },
       );
     } catch (error) {
       console.log(error);
-      setMessageError(true); // > Req 39 (front)
+      setMessageError(true);
     }
   };
 
@@ -40,7 +40,7 @@ function RegisterUser() {
     <div>
       {
         messageError && (
-          <span data-testis="admin_manage__element-invalid-register">
+          <span data-testid="admin_manage__element-invalid-register">
             Usuário já cadastrado!
           </span>
         )

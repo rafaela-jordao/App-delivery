@@ -36,6 +36,7 @@ function App() {
           path="/seller/orders/:id"
           element={ <SaleDetail user="seller" /> }
         />
+
         {/* Fluxo do administrador */}
         <Route exact path="/admin/manage" element={ <Admin /> } />
       </Routes>

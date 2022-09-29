@@ -18,7 +18,6 @@ function Admin() {
 
   const removeUser = async (e, id) => {
     e.preventDefault();
-    // CONFIRMAR ROTA NO BACK > req41
     await requestApi(`/users/${id}`, 'DELETE');
     updateUsers();
   };
@@ -56,9 +55,10 @@ function Admin() {
                 <td data-testid={ `admin_manage__element-user-table-role-${index}` }>
                   { role }
                 </td>
-                <td data-testid={ `admin_manage__element-user-table-remove-${index}` }>
+                <td>
                   <button
                     type="submit"
+                    data-testid={ `admin_manage__element-user-table-remove-${index}` }
                     onClick={ (e) => removeUser(e, id) }
                   >
                     Excluir
