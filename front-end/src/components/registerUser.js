@@ -28,7 +28,7 @@ function RegisterUser() {
       await requestApi( // CONFIRMAR ROTA NO BACK > req 38
         '/admin/register',
         'POST',
-        JSON.stringify({ name, email, password, role }),
+        { name, email, password, role },
       );
     } catch (error) {
       console.log(error);

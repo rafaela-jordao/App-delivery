@@ -27,11 +27,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const data = await requestApi(
-        '/users',
-        'POST',
-        JSON.stringify({ name, email, password }),
-      );
+      const data = await requestApi('/users', 'POST', { name, email, password });
       saveInLocalStorage('user', data);
       navigate('/customer/products');
     } catch (error) {

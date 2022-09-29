@@ -50,7 +50,7 @@ function Checkout() {
   const handleOrder = async (e) => {
     e.preventDefault();
 
-    const { saleId } = await requestApi('/sales', 'POST', JSON.stringify(sale));
+    const { saleId } = await requestApi('/sales', 'POST', sale);
 
     removeInLocalStorage('cart');
     navigate(`/customer/orders/${saleId}`);

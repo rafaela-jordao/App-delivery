@@ -24,11 +24,8 @@ function Admin() {
 
   const removeUser = async (e, id) => {
     e.preventDefault();
-    await requestApi( // CONFIRMAR ROTA NO BACK > req41
-      '/users',
-      'DELETE',
-      JSON.stringify({ id }),
-    );
+    // CONFIRMAR ROTA NO BACK > req41
+    await requestApi(`/users/${id}`, 'DELETE');
   };
 
   return (

@@ -29,8 +29,8 @@ function SaleDetail({ user }) {
   }, []);
 
   const updateStatus = async (newStatus) => {
-    await requestApi(`/sales/${id}`, 'PUT', JSON.stringify({ status: newStatus }));
-    setStatus(newStatus);
+    await requestApi(`/sales/${id}`, 'PUT', { status: newStatus });
+    updateSale();
   };
 
   const arr = [

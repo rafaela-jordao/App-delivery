@@ -44,11 +44,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const data = await requestApi(
-        '/login',
-        'POST',
-        JSON.stringify({ email, password }),
-      );
+      const data = await requestApi('/login', 'POST', { email, password });
       saveInLocalStorage('user', data);
       let nav = '';
       if (data.role === 'customer') {
