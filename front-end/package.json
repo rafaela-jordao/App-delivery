@@ -19,6 +19,7 @@
     "lint:styles": "stylelint **/*.css --config .stylelintrc.json --ignore-disables --allow-empty-input"
   },
   "dependencies": {
+    "@djpfs/react-vlibras": "^2.0.2",
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.4",
     "@testing-library/user-event": "13.5.0",

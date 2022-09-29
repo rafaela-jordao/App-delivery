@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import VLibras from '@djpfs/react-vlibras';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -10,6 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <CartProvider>
+        <VLibras forceOnload={true} />
         <App />
       </CartProvider>
     </BrowserRouter>

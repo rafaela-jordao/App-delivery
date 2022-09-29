@@ -40,22 +40,31 @@
 
 .product-card__element-control > * {
   flex-grow: 1;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
 }
 
 .product-card__element-control-button {
-  background-color: goldenrod;
   border: none;
   border-radius: 0;
-  color: rgb(163, 240, 160);
   cursor: pointer;
   margin: 0;
 }
 
 .product-card__element-control-input {
+  -moz-appearance: textfield;
   background-color: rgb(224, 224, 224);
   border: none;
   border-radius: 0;
+  margin: 0;
+}
+
+.product-card__element-control-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-card__element-control-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
 }
