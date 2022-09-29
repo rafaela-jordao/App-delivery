@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import CartCard from '../components/cartCard';
 import CartContext from '../context/CartContext';
 import requestApi from '../services/ApiService';
-import { readInLocalStorage, removeInLocalStorage } from '../services/localStorage';
+import { readInLocalStorage } from '../services/localStorage';
 
 function Checkout() {
   const navigate = useNavigate();
-  const { cartItems } = useContext(CartContext);
-  const [sellers, setSellers] = useState([]);
+  const { cartItems, clearCart } = useContext(CartContext);
   const [sellerId, setSellerId] = useState(2);
   const [deliveryAddress, setDeliveryAddress] = useState('');
   const [deliveryNumber, setDeliveryNumber] = useState('');
@@ -52,7 +51,7 @@ function Checkout() {
 
     const { saleId } = await requestApi('/sales', 'POST', sale);
 
-    removeInLocalStorage('cart');
+    clearCart();
     navigate(`/customer/orders/${saleId}`);
   };
 

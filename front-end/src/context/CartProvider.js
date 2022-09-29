@@ -47,6 +47,8 @@ function CartProvider({ children }) {
   const addToCart = (product, quantity = 1) => setToCart(product, quantity, true);
   const removeFromCart = (product, quantity = 1) => setToCart(product, -quantity, true);
 
+  const clearCart = () => setCartItems([]);
+
   const { Provider } = CartContext;
 
   return (
@@ -57,6 +59,7 @@ function CartProvider({ children }) {
         addToCart,
         removeFromCart,
         setToCart,
+        clearCart,
       } }
     >
       { children }
