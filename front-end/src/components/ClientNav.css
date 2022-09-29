@@ -6,9 +6,6 @@ nav {
   flex-flow: row nowrap;
   height: 105px;
   justify-content: space-between;
-  left: 0%;
-  right: 0%;
-  top: 0.01px;
   width: 100vw;
 }
 
@@ -53,4 +50,3 @@ nav {
   left: 96.62%;
   width: 180px;
 }
-

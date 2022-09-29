@@ -68,6 +68,7 @@ function Login() {
 
   return (
     <div>
+      <img src="/APP DE Delivery.png" alt="logo Bear Delivery" />
       <h1>LOGIN</h1>
       <form>
         <input

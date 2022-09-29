@@ -5,6 +5,7 @@ import CartContext from '../context/CartContext';
 import useApi from '../hooks/useApi';
 import requestApi from '../services/ApiService';
 import { readInLocalStorage } from '../services/localStorage';
+import '../components/cartCard.css';
 
 function Checkout() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ function Checkout() {
     <div>
       <h1> Carrinho </h1>
       <div>
-        <table>
+        <table className="page__element-table">
           <thead>
             <tr>
               {
@@ -69,7 +70,7 @@ function Checkout() {
           <tbody>
             {
               cartItems.map((order, index) => (
-                <tr key={ index }>
+                <tr key={ index } className="cart-card__element-tr">
                   <CartCard
                     index={ index }
                     products={ order }

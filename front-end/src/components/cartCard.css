@@ -1,0 +1,9 @@
+.page__element-table {
+  background-color: red;
+  width: 80%;
+}
+
+.cart-card__element-tr {
+  background-color: yellow;
+  text-align: center;
+}
