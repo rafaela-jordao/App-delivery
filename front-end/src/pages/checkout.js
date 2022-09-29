@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CartCard from '../components/cartCard';
 import CartContext from '../context/CartContext';
+import useApi from '../hooks/useApi';
 import requestApi from '../services/ApiService';
 import { readInLocalStorage } from '../services/localStorage';
 
 function Checkout() {
   const navigate = useNavigate();
   const { cartItems, clearCart } = useContext(CartContext);
+  const [fullUsers] = useApi('/users', []);
+  const sellers = fullUsers.filter(({ role }) => role === 'seller');
   const [sellerId, setSellerId] = useState(2);
   const [deliveryAddress, setDeliveryAddress] = useState('');
   const [deliveryNumber, setDeliveryNumber] = useState('');
@@ -18,13 +21,7 @@ function Checkout() {
       const data = readInLocalStorage('user');
       setUser(data);
     };
-    const getSellers = async () => {
-      const allUsersApp = await requestApi('/users');
-      const allSellers = allUsersApp.filter(({ role }) => role === 'seller');
-      setSellers(allSellers);
-    };
     getData();
-    getSellers();
   }, []);
 
   let total = 0;

@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ClientNav from '../components/ClientNav';
 import RegisterUser from '../components/registerUser';
+import useApi from '../hooks/useApi';
 import requestApi from '../services/ApiService';
 
 function Admin() {
-  const [users, setUsers] = useState([]);
+  const [fullUsers, updateUsers] = useApi('/users', [], 1);
+
+  const users = fullUsers.filter(({ role }) => role !== 'administrator');
 
   const columns = [
     'Item', 'Nome', 'E-mail',
@@ -13,19 +16,11 @@ function Admin() {
 
   const itemNumber = (index) => `admin_manage__element-user-table-item-number-${index}`;
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const allUsersApp = await requestApi('/users');
-      const withoutAdmin = allUsersApp.filter(({ role }) => role !== 'administrator');
-      setUsers(withoutAdmin);
-    };
-    getUsers();
-  }, []);
-
   const removeUser = async (e, id) => {
     e.preventDefault();
     // CONFIRMAR ROTA NO BACK > req41
     await requestApi(`/users/${id}`, 'DELETE');
+    updateUsers();
   };
 
   return (

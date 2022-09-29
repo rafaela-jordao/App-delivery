@@ -1,35 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 // import './products.css';
 import { useNavigate } from 'react-router-dom';
-import requestApi from '../services/ApiService';
 import ClientNav from '../components/ClientNav';
 import ProductCard from '../components/productCard';
 import CartContext from '../context/CartContext';
+import useApi from '../hooks/useApi';
 
 function Products() {
-  const [productList, setProducts] = useState([]);
-  const [cartDisabled, setCartDisabled] = useState(true);
+  const [products] = useApi('/products', []);
   const { totalPrice } = useContext(CartContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await requestApi('/products');
-      setProducts(data);
-    };
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    setCartDisabled(totalPrice === 0);
-  }, [totalPrice]);
 
   return (
     <div>
       <ClientNav page="customer" />
       <div className="products-list">
         {
-          productList.map((product, index) => (
+          products.map((product, index) => (
             <ProductCard
               key={ index }
               product={ product }
@@ -40,7 +27,7 @@ function Products() {
       <button
         type="button"
         data-testid="customer_products__button-cart"
-        disabled={ cartDisabled }
+        disabled={ totalPrice === 0 }
         onClick={ () => navigate('/customer/checkout') }
       >
         <span>Ver carrinho</span>

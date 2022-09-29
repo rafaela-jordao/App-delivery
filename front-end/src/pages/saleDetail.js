@@ -1,32 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import CartCard from '../components/cartCard';
 import formatDate from '../helpers/formatDate';
 import requestApi from '../services/ApiService';
 import ClientNav from '../components/ClientNav';
+import useApi from '../hooks/useApi';
 
 function SaleDetail({ user }) {
   const { id } = useParams();
-  const [sale, setSale] = useState([]);
-  const [seller, setSeller] = useState();
-  const [date, setDate] = useState();
-  const [status, setStatus] = useState('Pendente');
-  const [totalPrice, setTotalPrice] = useState();
+  const [sale, updateSale] = useApi(`/sales/${id}`, {}, 1);
 
-  useEffect(() => {
-    const findSale = async () => {
-      const temp = await requestApi(`/sales/${id}`);
-      setTotalPrice(temp.totalPrice);
-      setSale(temp.products);
-      setSeller(temp.seller.name);
-      setDate(temp.saleDate);
-      setStatus(temp.status);
-    };
-    findSale();
-    console.log(sale);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const {
+    seller: { name: sellerName } = {},
+    saleDate: date,
+    products = [],
+    status,
+    totalPrice,
+  } = sale;
 
   const updateStatus = async (newStatus) => {
     await requestApi(`/sales/${id}`, 'PUT', { status: newStatus });
@@ -61,7 +52,7 @@ function SaleDetail({ user }) {
           >
             Vendedor
             {' '}
-            { seller }
+            { sellerName }
           </div>
         ) }
         <div
@@ -125,7 +116,7 @@ function SaleDetail({ user }) {
         </thead>
         <tbody>
           {
-            sale.map((order, index) => (
+            products.map((order, index) => (
               <tr key={ index }>
                 <CartCard
                   index={ index }

@@ -1,21 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ClientNav from '../components/ClientNav';
 import OrderCard from '../components/orderCard';
-import requestApi from '../services/ApiService';
 import '../components/orderCard.css';
+import useApi from '../hooks/useApi';
 
 function Orders({ user }) {
-  const [orders, setOrders] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await requestApi('/sales');
-      setOrders(data);
-    };
-    getData();
-  }, []);
+  const [orders] = useApi('/sales', [], 1);
 
   return (
     <>
