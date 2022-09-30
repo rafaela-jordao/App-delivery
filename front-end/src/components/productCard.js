@@ -64,11 +64,11 @@ function ProductCard({ product }) {
       <section className="product-card__element-control">
         <button
           className="product-card__element-control-button"
-          data-testid={ `customer_products__button-card-rm-item-${product.id}` }
+          data-testid={ `customer_products__button-card-add-item-${product.id}` }
           type="button"
-          onClick={ sub }
+          onClick={ add }
         >
-          -
+          +
         </button>
         <input
           className="product-card__element-control-input"
@@ -80,11 +80,11 @@ function ProductCard({ product }) {
         />
         <button
           className="product-card__element-control-button"
-          data-testid={ `customer_products__button-card-add-item-${product.id}` }
+          data-testid={ `customer_products__button-card-rm-item-${product.id}` }
           type="button"
-          onClick={ add }
+          onClick={ sub }
         >
-          +
+          -
         </button>
       </section>
     </div>

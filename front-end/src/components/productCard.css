@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   height: max(4vw, 120px);
-  width: max(10vw, 300px);
+  width: max(9vw, 270px);
 }
 
 .product-card__element-info {
@@ -40,14 +40,13 @@
 
 .product-card__element-control > * {
   flex-grow: 1;
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-align: center;
 }
 
 .product-card__element-control-button {
   border: none;
   border-radius: 0;
-  cursor: pointer;
   margin: 0;
 }
 

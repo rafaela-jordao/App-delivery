@@ -40,7 +40,11 @@ function CartCard({ index, products, page, user }) {
               type="submit"
               onClick={ () => removeFromCart(products, qtt) }
             >
-              Remover
+              <img
+                className="lixo"
+                src="/trash.png"
+                alt="logo Bear Delivery"
+              />
             </button>
           </td>
         )

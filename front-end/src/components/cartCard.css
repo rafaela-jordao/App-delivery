@@ -1,9 +1,31 @@
 .page__element-table {
-  background-color: red;
+  background-color: rgb(163, 240, 160);
   width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
 }
 
 .cart-card__element-tr {
-  background-color: yellow;
+  background-color:#e3a22e;
   text-align: center;
+}
+
+.lixo {
+  width: 80%;
+  height: 60%;
+}
+
+.t1 {
+  font-size: xx-large;
+  text-align: center;  
+}
+
+.t2 {
+  font-size: large;
+  text-align: center;  
+}
+
+.imput {
+  display: flex;
 }

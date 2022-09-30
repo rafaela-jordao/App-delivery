@@ -7,7 +7,6 @@ import NavLink from './navLink';
 
 function ClientNav({ page }) {
   const navigate = useNavigate();
-
   const handleLogout = () => {
     removeInLocalStorage('user');
     navigate('/login');
@@ -20,11 +19,13 @@ function ClientNav({ page }) {
     navLinks = (
       <>
         <NavLink
+          className="nav-link"
           to="/customer/orders"
           testid="customer_products__element-navbar-link-orders"
           text="Meus Pedidos"
         />
         <NavLink
+          className="nav-link"
           to="/customer/products"
           testid="customer_products__element-navbar-link-products"
           text="Produtos"
@@ -55,27 +56,29 @@ function ClientNav({ page }) {
   }
 
   return (
-    <nav>
-      <div className="nav-itens">
-        { navLinks }
-      </div>
-      <div className="nav-user">
-        <div>
-          <span data-testid="customer_products__element-navbar-user-full-name">
-            { readInLocalStorage('user').name }
-          </span>
+    <header className="fixed">
+      <nav>
+        <div className="nav-itens">
+          { navLinks }
         </div>
-        <div>
-          <button
-            type="button"
-            onClick={ handleLogout }
-            data-testid="customer_products__element-navbar-link-logout"
-          >
-            Sair
-          </button>
+        <div className="nav-user">
+          <div>
+            <span data-testid="customer_products__element-navbar-user-full-name">
+              { readInLocalStorage('user').name }
+            </span>
+          </div>
+          <div>
+            <button
+              type="button"
+              onClick={ handleLogout }
+              data-testid="customer_products__element-navbar-link-logout"
+            >
+              Sair
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import './products.css';
+import './products.css';
 import { useNavigate } from 'react-router-dom';
 import ClientNav from '../components/ClientNav';
 import ProductCard from '../components/productCard';
@@ -14,7 +14,7 @@ function Products() {
   return (
     <div>
       <ClientNav page="customer" />
-      <div className="products-list">
+      <main className="products_page__container">
         {
           products.map((product, index) => (
             <ProductCard
@@ -23,17 +23,21 @@ function Products() {
             />
           ))
         }
-      </div>
+      </main>
       <button
+        className="products_page__cart-button"
         type="button"
         data-testid="customer_products__button-cart"
         disabled={ totalPrice === 0 }
         onClick={ () => navigate('/customer/checkout') }
       >
-        <span>Ver carrinho</span>
-        <span data-testid="customer_products__checkout-bottom-value">
-          {`${totalPrice.toFixed(2).replace('.', ',')}`}
-        </span>
+        <div className="products_page__cart-button-text">Ver carrinho</div>
+        <div className="products_page__cart-button-value">
+          <span>R$</span>
+          <span data-testid="customer_products__checkout-bottom-value">
+            {`${totalPrice.toFixed(2).replace('.', ',')}`}
+          </span>
+        </div>
       </button>
     </div>
   );

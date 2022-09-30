@@ -37,7 +37,7 @@ function RegisterUser() {
   };
 
   return (
-    <div>
+    <form>
       {
         messageError && (
           <span data-testid="admin_manage__element-invalid-register">
@@ -88,7 +88,7 @@ function RegisterUser() {
       >
         Cadastrar
       </button>
-    </div>
+    </form>
   );
 }
 

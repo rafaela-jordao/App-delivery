@@ -31,8 +31,8 @@ function Checkout() {
   });
 
   const arr = [
-    'Item', 'Descrição', 'Quantidade',
-    'Valor Unitário', 'Sub-total', 'Remover Item',
+    'Item', 'Desc.', 'Quant.',
+    'Val. Unit.', 'Sub-total', 'Remover',
   ];
 
   const sale = {
@@ -55,7 +55,7 @@ function Checkout() {
 
   return (
     <div>
-      <h1> Carrinho </h1>
+      <h1 className="t1"> Carrinho </h1>
       <div>
         <table className="page__element-table">
           <thead>
@@ -89,8 +89,8 @@ function Checkout() {
         </p>
       </div>
       <div>
-        <h1> Detalhes e Endereço para Entrega </h1>
-        <form>
+        <h3 className="t2"> Detalhes e Endereço para Entrega </h3>
+        <form className="imput">
           Vendedor Responsável
           <select
             onChange={ ({ target }) => setSellerId(target.value) }
