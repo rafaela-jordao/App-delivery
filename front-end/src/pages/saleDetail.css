@@ -1,0 +1,86 @@
+.order-details__element-header {
+  margin: 0.5em 1.5em;
+}
+
+.order-details__element-order {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+  gap: 20px;
+  margin: 20px auto;
+}
+
+.order-details__element-order-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50%;
+  background-color: rgba(243, 241, 241, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.order-details__element-order-info-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.order-details__element-order-info-id {
+  padding: 0.2em 0.4em;
+  background-color: rgb(224, 224, 224);
+  font-size: 2em;
+}
+
+.order-details__element-order-info-status {
+  padding: 0.2em 0.4em;
+  font-size: 1.8em;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  filter: opacity(0.75);
+}
+
+.order-details__element-order-seller {
+  padding: 0.2em 0.4em;
+  align-self: center;
+  font-size: 1.5em;
+}
+
+.order-details__element-order-date {
+  padding: 0.2em 0.4em;
+  background-color: rgb(224, 224, 224);
+  font-size: 1.8em;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+}
+
+.order-details__element-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.order-details__element-buttons button {
+  flex-basis: 35%;
+}
+
+@media (max-width: 600px) {
+  .order-details__element-order-info {
+    flex-direction: column;
+  }
+
+  .order-details__element-order-info-left {
+    justify-content: space-between;
+  }
+
+  .order-details__element-order-info-id {
+    border-radius: 10px;
+  }
+
+  .order-details__element-order-info-status {
+    border-radius: 10px;
+  }
+}

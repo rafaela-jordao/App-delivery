@@ -37,9 +37,9 @@ function Register() {
   }
 
   return (
-    <div>
+    <div className="body">
       <h1>REGISTRO</h1>
-      <form>
+      <form onSubmit={ (e) => handleRegister(e) }>
         <input
           onChange={ ({ target }) => setName(target.value) }
           placeholder="Name"
@@ -65,8 +65,7 @@ function Register() {
           className="btn btn-success btn-block"
           data-testid="common_register__button-register"
           disabled={ disabled }
-          onClick={ (e) => handleRegister(e) }
-          type="button"
+          type="submit"
         >
           Cadastrar
         </button>

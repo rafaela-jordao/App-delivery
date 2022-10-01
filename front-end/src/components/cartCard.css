@@ -1,31 +1,123 @@
-.page__element-table {
-  background-color: rgb(163, 240, 160);
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+.page-checkout {
+  color: rgb(58, 58, 58);
+}
+
+.page-checkout h1 {
+  margin: 0.5em 1.5em;
+}
+
+.page__element-div {
+  align-items: center;
+  background-color: rgb(243, 241, 241);
+  border: 1px solid rgb(146, 146, 146);
   border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin: auto;
+  padding: 15px;
+  width: 90%;
+}
+
+.page__element-table {
+  border-spacing: 10px;
+  text-align: center;
+  width: 100%;
+  color: rgb(58, 58, 58);
+}
+
+.cart-card__element-td-img {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.cart-card__element-td-img > span {
+  align-items: center;
+  margin-right: 15px;
 }
 
 .cart-card__element-tr {
-  background-color:#e3a22e;
-  text-align: center;
+  background-color: rgba(225, 180, 120, 0.2);
+  height: max(50px, 5vh);
 }
 
-.lixo {
+.cart-card__element-tr:nth-child( even ) {
+  background-color: rgba(133, 155, 133, 0.2);
+}
+
+.card-card__element-btn-remove {
+  padding: 5px;
   width: 80%;
-  height: 60%;
 }
 
-.t1 {
-  font-size: xx-large;
-  text-align: center;  
-}
-
-.t2 {
-  font-size: large;
-  text-align: center;  
-}
-
-.imput {
+/* td:nth-child( 6 ) {} */
+.page__element-form {
+  background-color: rgb(243, 241, 241);
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  padding: 15px;
+  width: 90%;
+}
+
+.page__element-form > label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  width: 26%;
+  flex-shrink: 0;
+}
+
+.page-checkout p {
+  font-size: 24px;
+}
+
+.page-checkout select {
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  text-align: center;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.39);
+  font-size: x-large;
+  width: auto;
+}
+
+.customer_checkout_card__remove-btn {
+  background-color: transparent;
+  padding: 5px;
+}
+
+.customer_checkout_card__remove-btn img {
+  height: 1.5em;
+}
+
+.customer_checkout_card__remove-btn:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+@media (max-width: 800px) {
+  .page__element-form > label {
+    width: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  .page__element-form {
+    flex-direction: column;
+  }
+
+  .page__element-form > label {
+    width: auto;
+  }
 }

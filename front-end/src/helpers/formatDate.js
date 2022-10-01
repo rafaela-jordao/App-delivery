@@ -1,4 +1,5 @@
 const formatDate = (dbDate) => {
+  if (Number.isNaN(Date.parse(dbDate))) return '';
   const today = new Date(dbDate);
   const year = today.getFullYear();
   let month = today.getMonth() + 1;

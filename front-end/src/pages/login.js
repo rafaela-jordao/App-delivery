@@ -71,7 +71,10 @@ function Login() {
     <div className="body">
       <img src="/APP DE Delivery.png" alt="logo Bear Delivery" />
       <h1>LOGIN</h1>
-      <form>
+      <form
+        onSubmit={ (e) => handleLogin(e) }
+        className="form1"
+      >
         <input
           className=""
           onChange={ ({ target }) => setEmail(target.value) }
@@ -91,8 +94,7 @@ function Login() {
           className="btn btn-success btn-block"
           data-testid="common_login__button-login"
           disabled={ disabled }
-          onClick={ (e) => handleLogin(e) }
-          type="button"
+          type="submit"
         >
           Login
         </button>

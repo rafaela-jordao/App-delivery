@@ -58,6 +58,7 @@
     "@djpfs/react-vlibras": "^2.0.2",
     "express-async-errors": "^3.1.1",
     "joi": "^17.6.0",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.0",
+    "vlibras-react": "^1.1.0"
   }
 }

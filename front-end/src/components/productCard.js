@@ -17,13 +17,13 @@ function ProductCard({ product }) {
   }, []);
 
   const add = () => {
-    setQuantity(quantity + 1);
+    setQuantity(Number(quantity) + 1);
     addToCart(product);
   };
 
   const sub = () => {
     if (quantity > 0) {
-      setQuantity(quantity - 1);
+      setQuantity(Number(quantity) - 1);
       removeFromCart(product);
     }
   };

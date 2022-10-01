@@ -6,7 +6,7 @@
   background-size: 200px;
   flex-direction: column;
   font-family: sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   width: 100%;
   min-width: 350px;
@@ -15,4 +15,26 @@
 a {
   text-decoration: none;
   color:  rgb(92, 68, 8);;
+}
+
+.tab-tr {
+  min-width: 20px;
+  max-width: 00px;
+  width: auto;
+}
+
+.Pendente {
+  background-color: rgb(255, 166, 115);
+}
+
+.Preparando {
+  background-color: rgb(255, 246, 115);
+}
+
+.Em { /* Em trânsito */
+  background-color: rgb(117, 211, 235);
+}
+
+.Entregue {
+  background-color: rgb(159, 255, 115);
 }

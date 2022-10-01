@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <CartProvider>
-        <VLibras forceOnload={true} />
+        <VLibras class="VLibras" />
         <App />
       </CartProvider>
     </BrowserRouter>

@@ -4,14 +4,18 @@
   gap: 10px;
   max-width: 100vw;
   padding: 1em;
+  padding-bottom: 8em;
   justify-content: space-evenly;
 }
 
-.products_page__cart-button {
+.products_page__cart-button-container {
   position: fixed;
+  bottom: 2em;
+  right: 2em;
+}
+
+.products_page__cart-button {
   font-size: 1.75em;
-  bottom: 1em;
-  right: 1em;
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -27,4 +31,13 @@
 .products_page__cart-button-value {
   padding: 0.5em 0.25em;
   background-color: goldenrod;
+}
+
+@media (max-width: 500px) {
+  .products_page__cart-button-container {
+    left: 0; 
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
 }

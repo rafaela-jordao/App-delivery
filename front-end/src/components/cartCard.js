@@ -38,12 +38,12 @@ function CartCard({ index, products, page, user }) {
           <td data-testid={ dataTestId.btnRemove }>
             <button
               type="submit"
+              className="customer_checkout_card__remove-btn"
               onClick={ () => removeFromCart(products, qtt) }
             >
               <img
-                className="lixo"
                 src="/trash.png"
-                alt="logo Bear Delivery"
+                alt="remover"
               />
             </button>
           </td>

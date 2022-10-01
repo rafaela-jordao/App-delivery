@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.VLibras {
+  width: 1000%!important;
+  border-radius: 50px!important;
+  border: 10px!important;
+}

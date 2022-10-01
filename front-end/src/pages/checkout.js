@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CartCard from '../components/cartCard';
 import CartContext from '../context/CartContext';
 import useApi from '../hooks/useApi';
+import ClientNav from '../components/ClientNav';
 import requestApi from '../services/ApiService';
 import { readInLocalStorage } from '../services/localStorage';
 import '../components/cartCard.css';
@@ -54,9 +55,10 @@ function Checkout() {
   };
 
   return (
-    <div>
-      <h1 className="t1"> Carrinho </h1>
-      <div>
+    <div className="page-checkout">
+      <ClientNav page="customer" />
+      <h1> Finalizar Pedido </h1>
+      <div className="page__element-div">
         <table className="page__element-table">
           <thead>
             <tr>
@@ -67,7 +69,7 @@ function Checkout() {
               }
             </tr>
           </thead>
-          <tbody>
+          <tbody className="cart-card__element-td">
             {
               cartItems.map((order, index) => (
                 <tr key={ index } className="cart-card__element-tr">
@@ -90,20 +92,22 @@ function Checkout() {
       </div>
       <div>
         <h3 className="t2"> Detalhes e Endereço para Entrega </h3>
-        <form className="imput">
-          Vendedor Responsável
-          <select
-            onChange={ ({ target }) => setSellerId(target.value) }
-            name="seller"
-            value={ sellerId }
-            data-testid="customer_checkout__select-seller"
-          >
-            {
-              sellers.map(({ name, id }) => (
-                <option key={ id } value={ id }>{name}</option>
-              ))
-            }
-          </select>
+        <form className="page__element-form" onSubmit={ (e) => handleOrder(e) }>
+          <label htmlFor="seller">
+            Vendedor(a) Responsável
+            <select
+              onChange={ ({ target }) => setSellerId(target.value) }
+              name="seller"
+              value={ sellerId }
+              data-testid="customer_checkout__select-seller"
+            >
+              {
+                sellers.map(({ name, id }) => (
+                  <option key={ id } value={ id }>{name}</option>
+                ))
+              }
+            </select>
+          </label>
           <label htmlFor="address">
             Endereço
             <input
@@ -126,7 +130,6 @@ function Checkout() {
           <button
             className="btn btn-success btn-block"
             data-testid="customer_checkout__button-submit-order"
-            onClick={ (e) => handleOrder(e) }
             type="submit"
           >
             Finalizar Pedido

@@ -1,14 +1,16 @@
 .product-card {
   border: 1px solid rgb(90, 90, 90);
+  border-radius: 5px;
   box-shadow: 1px 3px 1px rgb(170, 170, 170);
   display: flex;
   flex-direction: row;
   height: max(4vw, 120px);
+  overflow: hidden;
   width: max(9vw, 270px);
 }
 
 .product-card__element-info {
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(243, 241, 241);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
