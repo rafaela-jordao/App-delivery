@@ -1,11 +1,12 @@
-@media only screen and (min-device-width: 601px) {
+@media only screen and ( min-device-width : 601px ) {
+
   .fixed {
-    height: fit-content;
     grid-column: 1 / -1;
-    position: sticky;
-    top: 0px;
-    z-index: var(--zIndices-zIndexFirstLevel);
+    height: fit-content;
     overflow: initial;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   nav {
@@ -46,14 +47,14 @@
   }
 
   .nav-user div span {
-    display: flex;
-    align-items: center;
     align-content: center;
+    align-items: center;
     color: #f2fffc;
-    text-align: center;
+    display: flex;
     height: auto;
-    min-width: 120px;
     max-width: 300px;
+    min-width: 120px;
+    text-align: center;
     width: auto;
 
   }
@@ -61,14 +62,15 @@
   .nav-user div button {
     height: 70px;
     left: 96.62%;
-    min-width: 120px;
-    max-width: 300px;
-    width: 300px;
     margin-right: 10px;
+    max-width: 300px;
+    min-width: 120px;
+    width: 300px;
   }
 }
 
-@media (max-width: 600px) {
+@media ( max-width : 600px ) {
+
   nav {
     align-content: center;
     align-items: center;
@@ -79,7 +81,7 @@
     justify-content: space-between;
     width: 100vw;
   }
-  
+
   .nav-itens {
     align-items: center;
     display: none;
@@ -90,13 +92,13 @@
     right: 80.89%;
     top: 0;
     width: 733px;
-    
+
   }
-  
+
   .nav-itens div a {
     text-decoration: none;
   }
-  
+
   .nav-user {
     align-items: center;
     display: flex;
@@ -106,23 +108,23 @@
     left: 1391px;
     width: 539px;
   }
-  
+
   .nav-user div span {
     color: #f2fffc;
-    text-align: center;
     height: auto;
-    min-width: 150px;
-    max-width: 300px;
-    width: auto;
     margin-left: 30px;
+    max-width: 300px;
+    min-width: 150px;
+    text-align: center;
+    width: auto;
   }
-  
+
   .nav-user div button {
     height: 100%;
     left: 96.62%;
-    min-width: 120px;
-    max-width: 300px;
-    width: auto;
     margin-right: 10px;
+    max-width: 300px;
+    min-width: 120px;
+    width: auto;
   }
 }

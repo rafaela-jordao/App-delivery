@@ -70,7 +70,6 @@ function Login() {
   return (
     <div className="body">
       <img src="/APP DE Delivery.png" alt="logo Bear Delivery" />
-      <h1>LOGIN</h1>
       <form
         onSubmit={ (e) => handleLogin(e) }
         className="form1"

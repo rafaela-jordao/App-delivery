@@ -22,9 +22,9 @@
 
 .page__element-table {
   border-spacing: 10px;
+  color: rgb(58, 58, 58);
   text-align: center;
   width: 100%;
-  color: rgb(58, 58, 58);
 }
 
 .cart-card__element-td-img {
@@ -70,10 +70,10 @@
 .page__element-form > label {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   justify-content: space-between;
   padding: 10px;
   width: 26%;
-  flex-shrink: 0;
 }
 
 .page-checkout p {
@@ -82,14 +82,14 @@
 
 .page-checkout select {
   background-color: white;
+  border-color: rgba(0, 0, 0, 0.39);
   border-radius: 5px;
+  border-style: solid;
+  font-size: x-large;
   margin: 5px;
   padding-bottom: 3px;
   padding-top: 3px;
   text-align: center;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.39);
-  font-size: x-large;
   width: auto;
 }
 
@@ -106,13 +106,15 @@
   background-color: rgba(255, 0, 0, 0.1);
 }
 
-@media (max-width: 800px) {
+@media ( max-width : 800px ) {
+
   .page__element-form > label {
     width: 20%;
   }
 }
 
-@media (max-width: 600px) {
+@media ( max-width : 600px ) {
+
   .page__element-form {
     flex-direction: column;
   }

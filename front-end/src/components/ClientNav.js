@@ -45,8 +45,8 @@ function ClientNav({ page }) {
   case 'administrator':
     navLinks = (
       <NavLink
-        to="/admin/orders" // ?????
-        testid="customer_products__element-navbar-link-orders"
+        to="/admin/manage"
+        testid="customer_products__element-navbar-link-manage"
         text="Gerenciar Usuários"
       />
     );
